@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="style.css">
+        <title>Aaaaaa Ssssss</title>
+
+        <script>
+            // https://www.w3schools.com/css/css3_variables_javascript.asp
+            // Get the root element
+            var r = document.querySelector(':root');
+            // Primitive solution to toggle between light and dark mode (0 = dark, 1 = light)
+            var counter = 0;
+            // Create a function for setting a variable value
+            function toggleTheme() {
+                if (counter == 0) {
+                    // Step 1) Set the value of variable --black to another value (in this case "white")
+                    r.style.setProperty('--black', 'white');
+                    r.style.setProperty('--white', '#171717');
+                    r.style.setProperty('--babyblue', '#dc493a');
+                    r.style.setProperty('--darkblue', '#f2dc5d');
+                    counter = 1;
+                } else {
+                    // Reverse Step 1
+                    r.style.setProperty('--black', '#171717');
+                    r.style.setProperty('--white', '#e8e8e8');
+                    r.style.setProperty('--babyblue', '#bee9e8');
+                    r.style.setProperty('--darkblue', '#4b4a67');
+                    counter = 0;
+                }
+            }
+        </script> 
+    </head>
+
+    <body>
+        
+        <div id="side">
+            <div id="sideName">
+                <h1>Aaaaaa</h1>
+                <h1>Ssssss</h1>
+            </div>
+            <div id="sideImage">
+
+            </div>
+        </div>
+
+        <div id="container">
+            <nav>
+                <a class="mainItems" href="#category1">About me</a><!-- Über mich -->
+                <a class="mainItems" href="#category2">Education</a><!-- Ausbildung -->
+                <a class="mainItems" href="#category3">Certificates</a><!-- Zertifikate -->
+                <a class="mainItems" href="#category4">Hobbies & Interests</a><!-- Hobbies & Interessen -->
+                <a class="mainItems" href="#category5">Blabla</a><!-- Impressum -->
+                <a class="smallItems" href="">Aa</a>
+                <a class="smallItems" href="javascript:toggleTheme()">OC</a>
+            </nav>
+            <div id="content">
+                <section id="category1" class="anchor">
+                    <h2>About me</h2>
+                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Culpa nam perspiciatis, ut ea quaerat qui repudiandae, aspernatur laboriosam, iusto tenetur iste nobis fugit mollitia id dolores deleniti molestiae porro. Officia.
+                    Animi exercitationem excepturi adipisci a facere, possimus quasi, ullam nobis quo, dolorem qui explicabo nesciunt ducimus magnam illum neque. Voluptatibus ut unde, eius numquam aspernatur obcaecati rem est illo nulla!
+                    Exercitationem qui officiis eaque itaque? Consequatur velit eum, totam mollitia odit corporis, quidem ipsum ratione maiores vel, ad sit labore temporibus voluptate officia id delectus? Consequuntur debitis quam voluptas labore.
+                    Totam, consequatur harum. Minima nesciunt dignissimos repellendus unde, tempore est facilis accusantium maxime veritatis a, possimus quam obcaecati iure officia animi sit non voluptatibus vitae incidunt tempora magnam ratione deserunt.
+                    Magni impedit laborum recusandae, laudantium molestiae hic magnam consequuntur vero doloremque dolorem expedita explicabo repellendus? Optio commodi ut consectetur similique deserunt maxime veritatis, neque ex maiores unde quae reiciendis error?
+                    Soluta, esse architecto? Ipsum nobis mollitia, quibusdam excepturi perspiciatis nisi incidunt dolorum nesciunt quis reiciendis tempore magnam cumque optio reprehenderit itaque facere et ab, odio id error totam, unde accusantium?
+                    Accusantium quia quidem, autem suscipit eveniet quisquam nam deleniti asperiores, obcaecati, culpa dignissimos beatae explicabo? Dolor iure sequi fuga, et officiis assumenda odit asperiores, quaerat cum natus libero! Nulla, quod?
+                    Quae exercitationem consequatur voluptates ducimus minima ullam perspiciatis earum dolorem sapiente reprehenderit explicabo similique sit, maxime nobis voluptatum ipsam! Ad, quam. Sapiente eos non dicta molestiae explicabo nesciunt sed repellendus.
+                    Sequi voluptate commodi, accusantium laborum cupiditate sapiente repellat itaque maxime, accusamus praesentium ullam nihil reprehenderit consectetur earum consequuntur rem labore, magnam illo impedit hic dicta cumque assumenda doloremque. Quisquam, impedit!
+                    Veritatis repellat nisi error quaerat obcaecati delectus adipisci accusamus nam odio, explicabo maxime, doloribus vitae recusandae in nihil! Eius commodi accusantium fugit aspernatur vero magni non eligendi eaque? Quasi, accusamus.</p>
+                </section>
+                <hr>
+                <section id="category2" class="anchor">
+                    <h2>Education</h2>
+                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Culpa nam perspiciatis, ut ea quaerat qui repudiandae, aspernatur laboriosam, iusto tenetur iste nobis fugit mollitia id dolores deleniti molestiae porro. Officia.
+                    Animi exercitationem excepturi adipisci a facere, possimus quasi, ullam nobis quo, dolorem qui explicabo nesciunt ducimus magnam illum neque. Voluptatibus ut unde, eius numquam aspernatur obcaecati rem est illo nulla!
+                    Exercitationem qui officiis eaque itaque? Consequatur velit eum, totam mollitia odit corporis, quidem ipsum ratione maiores vel, ad sit labore temporibus voluptate officia id delectus? Consequuntur debitis quam voluptas labore.
+                    Totam, consequatur harum. Minima nesciunt dignissimos repellendus unde, tempore est facilis accusantium maxime veritatis a, possimus quam obcaecati iure officia animi sit non voluptatibus vitae incidunt tempora magnam ratione deserunt.
+                    Magni impedit laborum recusandae, laudantium molestiae hic magnam consequuntur vero doloremque dolorem expedita explicabo repellendus? Optio commodi ut consectetur similique deserunt maxime veritatis, neque ex maiores unde quae reiciendis error?
+                    Soluta, esse architecto? Ipsum nobis mollitia, quibusdam excepturi perspiciatis nisi incidunt dolorum nesciunt quis reiciendis tempore magnam cumque optio reprehenderit itaque facere et ab, odio id error totam, unde accusantium?
+                    Accusantium quia quidem, autem suscipit eveniet quisquam nam deleniti asperiores, obcaecati, culpa dignissimos beatae explicabo? Dolor iure sequi fuga, et officiis assumenda odit asperiores, quaerat cum natus libero! Nulla, quod?
+                    Quae exercitationem consequatur voluptates ducimus minima ullam perspiciatis earum dolorem sapiente reprehenderit explicabo similique sit, maxime nobis voluptatum ipsam! Ad, quam. Sapiente eos non dicta molestiae explicabo nesciunt sed repellendus.
+                    Sequi voluptate commodi, accusantium laborum cupiditate sapiente repellat itaque maxime, accusamus praesentium ullam nihil reprehenderit consectetur earum consequuntur rem labore, magnam illo impedit hic dicta cumque assumenda doloremque. Quisquam, impedit!
+                    Veritatis repellat nisi error quaerat obcaecati delectus adipisci accusamus nam odio, explicabo maxime, doloribus vitae recusandae in nihil! Eius commodi accusantium fugit aspernatur vero magni non eligendi eaque? Quasi, accusamus.</p>
+                </section>
+                <hr>
+                <section id="category3" class="anchor">
+                    <h2>Certificates</h2>
+                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Culpa nam perspiciatis, ut ea quaerat qui repudiandae, aspernatur laboriosam, iusto tenetur iste nobis fugit mollitia id dolores deleniti molestiae porro. Officia.
+                    Animi exercitationem excepturi adipisci a facere, possimus quasi, ullam nobis quo, dolorem qui explicabo nesciunt ducimus magnam illum neque. Voluptatibus ut unde, eius numquam aspernatur obcaecati rem est illo nulla!
+                    Exercitationem qui officiis eaque itaque? Consequatur velit eum, totam mollitia odit corporis, quidem ipsum ratione maiores vel, ad sit labore temporibus voluptate officia id delectus? Consequuntur debitis quam voluptas labore.
+                    Totam, consequatur harum. Minima nesciunt dignissimos repellendus unde, tempore est facilis accusantium maxime veritatis a, possimus quam obcaecati iure officia animi sit non voluptatibus vitae incidunt tempora magnam ratione deserunt.
+                    Magni impedit laborum recusandae, laudantium molestiae hic magnam consequuntur vero doloremque dolorem expedita explicabo repellendus? Optio commodi ut consectetur similique deserunt maxime veritatis, neque ex maiores unde quae reiciendis error?
+                    Soluta, esse architecto? Ipsum nobis mollitia, quibusdam excepturi perspiciatis nisi incidunt dolorum nesciunt quis reiciendis tempore magnam cumque optio reprehenderit itaque facere et ab, odio id error totam, unde accusantium?
+                    Accusantium quia quidem, autem suscipit eveniet quisquam nam deleniti asperiores, obcaecati, culpa dignissimos beatae explicabo? Dolor iure sequi fuga, et officiis assumenda odit asperiores, quaerat cum natus libero! Nulla, quod?
+                    Quae exercitationem consequatur voluptates ducimus minima ullam perspiciatis earum dolorem sapiente reprehenderit explicabo similique sit, maxime nobis voluptatum ipsam! Ad, quam. Sapiente eos non dicta molestiae explicabo nesciunt sed repellendus.
+                    Sequi voluptate commodi, accusantium laborum cupiditate sapiente repellat itaque maxime, accusamus praesentium ullam nihil reprehenderit consectetur earum consequuntur rem labore, magnam illo impedit hic dicta cumque assumenda doloremque. Quisquam, impedit!
+                    Veritatis repellat nisi error quaerat obcaecati delectus adipisci accusamus nam odio, explicabo maxime, doloribus vitae recusandae in nihil! Eius commodi accusantium fugit aspernatur vero magni non eligendi eaque? Quasi, accusamus.</p>
+                </section>
+                <hr>
+                <section id="category4" class="anchor">
+                    <h2>Hobbies & Interests</h2>
+                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Culpa nam perspiciatis, ut ea quaerat qui repudiandae, aspernatur laboriosam, iusto tenetur iste nobis fugit mollitia id dolores deleniti molestiae porro. Officia.
+                    Animi exercitationem excepturi adipisci a facere, possimus quasi, ullam nobis quo, dolorem qui explicabo nesciunt ducimus magnam illum neque. Voluptatibus ut unde, eius numquam aspernatur obcaecati rem est illo nulla!
+                    Exercitationem qui officiis eaque itaque? Consequatur velit eum, totam mollitia odit corporis, quidem ipsum ratione maiores vel, ad sit labore temporibus voluptate officia id delectus? Consequuntur debitis quam voluptas labore.
+                    Totam, consequatur harum. Minima nesciunt dignissimos repellendus unde, tempore est facilis accusantium maxime veritatis a, possimus quam obcaecati iure officia animi sit non voluptatibus vitae incidunt tempora magnam ratione deserunt.
+                    Magni impedit laborum recusandae, laudantium molestiae hic magnam consequuntur vero doloremque dolorem expedita explicabo repellendus? Optio commodi ut consectetur similique deserunt maxime veritatis, neque ex maiores unde quae reiciendis error?
+                    Soluta, esse architecto? Ipsum nobis mollitia, quibusdam excepturi perspiciatis nisi incidunt dolorum nesciunt quis reiciendis tempore magnam cumque optio reprehenderit itaque facere et ab, odio id error totam, unde accusantium?
+                    Accusantium quia quidem, autem suscipit eveniet quisquam nam deleniti asperiores, obcaecati, culpa dignissimos beatae explicabo? Dolor iure sequi fuga, et officiis assumenda odit asperiores, quaerat cum natus libero! Nulla, quod?
+                    Quae exercitationem consequatur voluptates ducimus minima ullam perspiciatis earum dolorem sapiente reprehenderit explicabo similique sit, maxime nobis voluptatum ipsam! Ad, quam. Sapiente eos non dicta molestiae explicabo nesciunt sed repellendus.
+                    Sequi voluptate commodi, accusantium laborum cupiditate sapiente repellat itaque maxime, accusamus praesentium ullam nihil reprehenderit consectetur earum consequuntur rem labore, magnam illo impedit hic dicta cumque assumenda doloremque. Quisquam, impedit!
+                    Veritatis repellat nisi error quaerat obcaecati delectus adipisci accusamus nam odio, explicabo maxime, doloribus vitae recusandae in nihil! Eius commodi accusantium fugit aspernatur vero magni non eligendi eaque? Quasi, accusamus.</p>
+                </section>
+                <hr>
+                <section id="category5" class="anchor">
+                    <h2>Blabla</h2>
+                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Culpa nam perspiciatis, ut ea quaerat qui repudiandae, aspernatur laboriosam, iusto tenetur iste nobis fugit mollitia id dolores deleniti molestiae porro. Officia.
+                    Animi exercitationem excepturi adipisci a facere, possimus quasi, ullam nobis quo, dolorem qui explicabo nesciunt ducimus magnam illum neque. Voluptatibus ut unde, eius numquam aspernatur obcaecati rem est illo nulla!
+                    Exercitationem qui officiis eaque itaque? Consequatur velit eum, totam mollitia odit corporis, quidem ipsum ratione maiores vel, ad sit labore temporibus voluptate officia id delectus? Consequuntur debitis quam voluptas labore.
+                    Totam, consequatur harum. Minima nesciunt dignissimos repellendus unde, tempore est facilis accusantium maxime veritatis a, possimus quam obcaecati iure officia animi sit non voluptatibus vitae incidunt tempora magnam ratione deserunt.
+                    Magni impedit laborum recusandae, laudantium molestiae hic magnam consequuntur vero doloremque dolorem expedita explicabo repellendus? Optio commodi ut consectetur similique deserunt maxime veritatis, neque ex maiores unde quae reiciendis error?
+                    Soluta, esse architecto? Ipsum nobis mollitia, quibusdam excepturi perspiciatis nisi incidunt dolorum nesciunt quis reiciendis tempore magnam cumque optio reprehenderit itaque facere et ab, odio id error totam, unde accusantium?
+                    Accusantium quia quidem, autem suscipit eveniet quisquam nam deleniti asperiores, obcaecati, culpa dignissimos beatae explicabo? Dolor iure sequi fuga, et officiis assumenda odit asperiores, quaerat cum natus libero! Nulla, quod?
+                    Quae exercitationem consequatur voluptates ducimus minima ullam perspiciatis earum dolorem sapiente reprehenderit explicabo similique sit, maxime nobis voluptatum ipsam! Ad, quam. Sapiente eos non dicta molestiae explicabo nesciunt sed repellendus.
+                    Sequi voluptate commodi, accusantium laborum cupiditate sapiente repellat itaque maxime, accusamus praesentium ullam nihil reprehenderit consectetur earum consequuntur rem labore, magnam illo impedit hic dicta cumque assumenda doloremque. Quisquam, impedit!
+                    Veritatis repellat nisi error quaerat obcaecati delectus adipisci accusamus nam odio, explicabo maxime, doloribus vitae recusandae in nihil! Eius commodi accusantium fugit aspernatur vero magni non eligendi eaque? Quasi, accusamus.</p>
+                </section>
+            </div>
+        </div>
+
+    </body>
+</html>

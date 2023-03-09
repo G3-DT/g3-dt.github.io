@@ -1,0 +1,132 @@
+@font-face {
+    font-family: RobotoRegular;
+    src: url(fonts/Roboto/Roboto-Regular.ttf);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --black: #171717;
+    --white: #e8e8e8; 
+    --truewhite: #ffffff;
+    --darkblue: #4b4a67;
+    --babyblue: #bee9e8;
+    --red: #dc493a;
+    --yellow: #f2dc5d;
+    --roboto: RobotoRegular;
+    --gradient: linear-gradient(-45deg, var(--darkblue), var(--babyblue));
+}
+
+::selection {
+    color: var(--black);
+    background-color: var(--white);
+}
+
+.anchor {
+    scroll-margin-top: 125px;
+}
+
+body {
+    background-color: var(--black);
+}
+
+#side {
+    width: 25%;
+    height: 100%;
+    position: fixed;
+    padding-top: 75px;
+    background-color: var(--black);
+    /* background image (changing on scroll needs to be done) */
+    background-image: url();
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-attachment: fixed;
+    background-position: left bottom;
+}
+
+#side h1 {
+    font-family: var(--roboto);
+    font-size: 100px;
+    /* gradient text */
+    color: transparent;
+    background-image: var(--gradient);
+    background-clip: text;
+}
+
+#sideName {
+    /* flexbox for the h1 items */
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-content: flex-start;
+}
+
+#container {
+    width: 75%;
+    height: auto;
+    /* background-color: rgb(149, 112, 112); */
+    left: 25%;
+    position: relative;
+}
+
+nav {
+    width: 75%;
+    height: 75px;
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    background-color: var(--black);
+    border-bottom: 1px solid var(--white);
+}
+
+nav a {
+    text-decoration: none;
+    color: var(--white);
+    font-family: var(--roboto);
+    font-size: 18px;
+    display: block;
+    padding: 10px;
+    text-align: center;
+}
+
+.mainItems {
+    flex-grow: 2;
+}
+
+.smallItems {
+    flex-grow: 1;
+}
+
+#content {
+    width: 100%;
+    height: auto;
+    padding-top: 75px;
+    /* background-color: #969696; */
+}
+
+section {
+    width: auto;
+    height: auto;
+    padding: 10px;
+    margin: 50px;
+}
+
+section h2 {
+    font-family: var(--roboto);
+    font-size: 30px;
+    /* gradient text */
+    color: transparent;
+    background-image: var(--gradient);
+    background-clip: text;
+}
+
+section p {
+    font-family: var(--roboto);
+    font-size: 20px;
+    color: var(--white);
+    margin: 25px;
+}
