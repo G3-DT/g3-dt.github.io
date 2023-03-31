@@ -121,7 +121,7 @@ section h2 {
     /* gradient text */
     color: transparent;
     background-image: var(--gradient);
-    background-clip: text;
+    -webkit-background-clip: text;
 }
 
 section p {
