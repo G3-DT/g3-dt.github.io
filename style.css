@@ -6,16 +6,22 @@
 * {
     margin: 0;
     padding: 0;
+    /* outline: blue 1px solid !important; */
 }
 
 :root {
     --black: #171717;
     --white: #e8e8e8; 
     --truewhite: #ffffff;
+
     --darkblue: #4b4a67;
     --babyblue: #bee9e8;
+
     --red: #dc493a;
     --yellow: #f2dc5d;
+
+    --navSelection: #262626;
+
     --roboto: RobotoRegular;
     --gradient: linear-gradient(-45deg, var(--darkblue), var(--babyblue));
 }
@@ -29,68 +35,104 @@
     scroll-margin-top: 125px;
 }
 
+
+
 body {
     background-color: var(--black);
 }
 
-#side {
-    width: 25%;
-    height: 100%;
-    position: fixed;
-    padding-top: 75px;
-    background-color: var(--black);
-    /* background image (changing on scroll needs to be done) */
-    background-image: url();
-    background-repeat: no-repeat;
-    background-size: contain;
-    background-attachment: fixed;
-    background-position: left bottom;
+
+
+#page {
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    grid-template-rows: 75px repeat(7, 1fr) ;
+    grid-column-gap: 0px;
+    grid-row-gap: 0px; 
 }
 
-#side h1 {
+
+
+/* --- Top --- */
+
+#top {
+    background-color: var(--black);
+    grid-area: 1 / 1 / 2 / 9;
+
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 75px;
+    grid-column-gap: 0px;
+    grid-row-gap: 0px; 
+
+    position: sticky;
+    top: 0;
+    z-index: 10;
+
+    box-shadow: 0 10px 25px 25px var(--black);
+}
+
+
+
+/* --- Top Name --- */
+
+#topNameContainer {
+    grid-area: 1 / 1 / 2 / 2;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-color: var(--black);
+    position: fixed;
+    width: 25%;
+    height: 75px;
+    z-index: 9;
+}
+
+#topName {
+    visibility: hidden;
+
     font-family: var(--roboto);
-    font-size: 100px;
+    font-size: 40px;
+
     /* gradient text */
     color: transparent;
     background-image: var(--gradient);
+    background-clip: text;
     -webkit-background-clip: text;
 }
 
-#sideName {
-    /* flexbox for the h1 items */
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: center;
-    align-content: flex-start;
-}
 
-#container {
-    width: 75%;
-    height: auto;
-    /* background-color: rgb(149, 112, 112); */
-    left: 25%;
-    position: relative;
-}
+
+/* --- Navigation --- */
 
 nav {
-    width: 75%;
+    background-color: green;
+    grid-area: 1 / 2 / 2 / 5;
+    
+    width: 100%;
     height: 75px;
-    position: fixed;
+
     display: flex;
     align-items: center;
     justify-content: space-around;
     background-color: var(--black);
     border-bottom: 1px solid var(--white);
+
+    z-index: 11;
 }
 
 nav a {
-    text-decoration: none;
     color: var(--white);
     font-family: var(--roboto);
     font-size: 18px;
-    display: block;
-    padding: 10px;
-    text-align: center;
+    height: 100%;
+    text-decoration: none;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .mainItems {
@@ -101,11 +143,70 @@ nav a {
     flex-grow: 1;
 }
 
-#content {
+nav a:hover {
+    animation: navHoverChangeBackground 0.5s forwards;
+    text-decoration: underline;
+}
+
+#category1:hover #bar {
+
+    background-size: 100% 2px;
+
+}
+
+@keyframes navHoverChangeBackground {
+    from {
+        background-color: var(--black);
+    }
+    to {
+        background-color: var(--navSelection);
+    }
+}
+
+
+
+/* --- Side --- */
+
+#side {
+    background-color: var(--black);
+    grid-area: 2 / 1 / 7 / 3;
+}
+
+#sideContent {
+    background-color: var(--black);
+    position: sticky;
+    top: 75px;
     width: 100%;
-    height: auto;
-    padding-top: 75px;
-    /* background-color: #969696; */
+    
+    /* background image (changing on scroll needs to be done) */
+    background-image: url();
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-attachment: fixed;
+    background-position: left bottom;
+}
+
+#sideContent h1
+{
+    text-align: center;
+    font-family: var(--roboto);
+    font-size: 100px;
+    padding: 25px;
+
+    /* gradient text */
+    color: transparent;
+    background-image: var(--gradient);
+    background-clip: text;
+    -webkit-background-clip: text;
+}
+
+
+
+/* --- Content --- */
+
+#content {
+    background-color: var(--black);
+    grid-area: 2 / 3 / 7 / 9;
 }
 
 section {
@@ -115,12 +216,13 @@ section {
     margin: 50px;
 }
 
-section h2 {
+section h3 {
     font-family: var(--roboto);
     font-size: 30px;
     /* gradient text */
     color: transparent;
     background-image: var(--gradient);
+    background-clip: text;
     -webkit-background-clip: text;
 }
 
@@ -129,4 +231,17 @@ section p {
     font-size: 20px;
     color: var(--white);
     margin: 25px;
+}
+
+
+
+/* --- Footer --- */
+
+footer {
+    background-color: orange;
+    grid-area: 7 / 1 / 9 / 9;
+}
+
+footer p {
+    font-size: 50px;
 }
