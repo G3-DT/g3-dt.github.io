@@ -1,132 +1,181 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="style.css">
-        <title>Aaaaaa Ssssss</title>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Aaaaaa Ssssss</title>
+    <link rel="icon" type="image/x-icon" href="/images/faviconLight.svg">
 
-        <script>
-            // https://www.w3schools.com/css/css3_variables_javascript.asp
-            // Get the root element
-            var r = document.querySelector(':root');
-            // Primitive solution to toggle between light and dark mode (0 = dark, 1 = light)
-            var counter = 0;
-            // Create a function for setting a variable value
-            function toggleTheme() {
-                if (counter == 0) {
-                    // Step 1) Set the value of variable --black to another value (in this case "white")
-                    r.style.setProperty('--black', 'white');
-                    r.style.setProperty('--white', '#171717');
-                    r.style.setProperty('--babyblue', '#dc493a');
-                    r.style.setProperty('--darkblue', '#f2dc5d');
-                    counter = 1;
-                } else {
-                    // Reverse Step 1
-                    r.style.setProperty('--black', '#171717');
-                    r.style.setProperty('--white', '#e8e8e8');
-                    r.style.setProperty('--babyblue', '#bee9e8');
-                    r.style.setProperty('--darkblue', '#4b4a67');
-                    counter = 0;
-                }
+    <script>
+
+        // To change the favicon.ico easily
+        // https://stackoverflow.com/questions/260857/changing-website-favicon-dynamically
+
+
+        // https://www.w3schools.com/css/css3_variables_javascript.asp
+        // Get the root element
+        let r = document.querySelector(':root');
+        // Primitive solution to toggle between light and dark mode (0 = light, 1 = dark)
+        let counter = 0;
+        // Create a function for setting a variable value
+        function toggleTheme() {
+            if (counter == 0) {
+                // Step 1) Set the value of variable --black to another value (in this case "white")
+                r.style.setProperty('--black', 'white');
+                r.style.setProperty('--white', '#171717');
+                r.style.setProperty('--babyblue', '#dc493a');
+                r.style.setProperty('--darkblue', '#f2dc5d');
+                r.style.setProperty('--navSelection', '#e8e8e8');
+                counter = 1;
+            } else {
+                // Reverse Step 1
+                r.style.setProperty('--black', '#171717');
+                r.style.setProperty('--white', '#e8e8e8');
+                r.style.setProperty('--babyblue', '#bee9e8');
+                r.style.setProperty('--darkblue', '#4b4a67');
+                r.style.setProperty('--navSelection', '#262626');
+                counter = 0;
             }
-        </script> 
-    </head>
+        }
 
-    <body>
-        
-        <div id="side">
-            <div id="sideName">
-                <h1>Aaaaaa</h1>
-                <h1>Ssssss</h1>
+
+        // https://usefulangle.com/post/113/javascript-detecting-element-visible-during-scroll
+        window.addEventListener('scroll', function() {
+            var element = document.querySelector('#sideBigName');
+            var position = element.getBoundingClientRect();
+
+            // checking whether fully visible
+            if(position.top >= 75 && position.bottom <= window.innerHeight) {
+                // console.log('Element is fully visible in screen');
+                document.getElementById('topName').style.visibility = 'hidden'; 
+            }
+            // checking for partial visibility
+            else if(position.top < window.innerHeight && position.bottom >= 75) {
+                // console.log('Element is partially visible in screen');
+                document.getElementById('topName').style.visibility = 'hidden'; 
+            }
+            // no visibility
+            else {
+                //console.log('Element is not visible');
+                document.getElementById('topName').style.visibility = 'visible'; 
+            }
+        });
+
+    </script>
+
+</head>
+
+<body>
+    <div id="page">
+        <div id="top">
+            <div id="topNameContainer">
+                <h2 id="topName">Aaaaaa Ssssss</h2>
             </div>
-            <div id="sideImage">
-
-            </div>
-        </div>
-
-        <div id="container">
             <nav>
-                <a class="mainItems" href="#category1">About me</a><!-- Über mich -->
-                <a class="mainItems" href="#category2">Education</a><!-- Ausbildung -->
-                <a class="mainItems" href="#category3">Certificates</a><!-- Zertifikate -->
-                <a class="mainItems" href="#category4">Hobbies & Interests</a><!-- Hobbies & Interessen -->
-                <a class="mainItems" href="#category5">Blabla</a><!-- Impressum -->
-                <a class="smallItems" href="">Aa</a>
-                <a class="smallItems" href="javascript:toggleTheme()">OC</a>
+                <a class="mainItems" href="#category1"><span>About me</span></a> <!-- Über mich -->
+                <a class="mainItems" href="#category2"><span>Education</span></a> <!-- Ausbildung -->
+                <a class="mainItems" href="#category3"><span>Certificates</span></a> <!-- Zertifikate -->
+                <a class="mainItems" href="#category4"><span>Hobbies & Interests</span></a> <!-- Hobbies & Interessen -->
+                <a class="mainItems" href="#category5"><span>Blabla</span></a> <!-- Impressum -->
+                <a class="smallItems" href=""><span>Aa</span></a>
+                <a class="smallItems" href="javascript:toggleTheme()"><span>OC</span></a>
             </nav>
-            <div id="content">
-                <section id="category1" class="anchor">
-                    <h2>About me</h2>
-                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Culpa nam perspiciatis, ut ea quaerat qui repudiandae, aspernatur laboriosam, iusto tenetur iste nobis fugit mollitia id dolores deleniti molestiae porro. Officia.
-                    Animi exercitationem excepturi adipisci a facere, possimus quasi, ullam nobis quo, dolorem qui explicabo nesciunt ducimus magnam illum neque. Voluptatibus ut unde, eius numquam aspernatur obcaecati rem est illo nulla!
-                    Exercitationem qui officiis eaque itaque? Consequatur velit eum, totam mollitia odit corporis, quidem ipsum ratione maiores vel, ad sit labore temporibus voluptate officia id delectus? Consequuntur debitis quam voluptas labore.
-                    Totam, consequatur harum. Minima nesciunt dignissimos repellendus unde, tempore est facilis accusantium maxime veritatis a, possimus quam obcaecati iure officia animi sit non voluptatibus vitae incidunt tempora magnam ratione deserunt.
-                    Magni impedit laborum recusandae, laudantium molestiae hic magnam consequuntur vero doloremque dolorem expedita explicabo repellendus? Optio commodi ut consectetur similique deserunt maxime veritatis, neque ex maiores unde quae reiciendis error?
-                    Soluta, esse architecto? Ipsum nobis mollitia, quibusdam excepturi perspiciatis nisi incidunt dolorum nesciunt quis reiciendis tempore magnam cumque optio reprehenderit itaque facere et ab, odio id error totam, unde accusantium?
-                    Accusantium quia quidem, autem suscipit eveniet quisquam nam deleniti asperiores, obcaecati, culpa dignissimos beatae explicabo? Dolor iure sequi fuga, et officiis assumenda odit asperiores, quaerat cum natus libero! Nulla, quod?
-                    Quae exercitationem consequatur voluptates ducimus minima ullam perspiciatis earum dolorem sapiente reprehenderit explicabo similique sit, maxime nobis voluptatum ipsam! Ad, quam. Sapiente eos non dicta molestiae explicabo nesciunt sed repellendus.
-                    Sequi voluptate commodi, accusantium laborum cupiditate sapiente repellat itaque maxime, accusamus praesentium ullam nihil reprehenderit consectetur earum consequuntur rem labore, magnam illo impedit hic dicta cumque assumenda doloremque. Quisquam, impedit!
-                    Veritatis repellat nisi error quaerat obcaecati delectus adipisci accusamus nam odio, explicabo maxime, doloribus vitae recusandae in nihil! Eius commodi accusantium fugit aspernatur vero magni non eligendi eaque? Quasi, accusamus.</p>
-                </section>
-                <hr>
-                <section id="category2" class="anchor">
-                    <h2>Education</h2>
-                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Culpa nam perspiciatis, ut ea quaerat qui repudiandae, aspernatur laboriosam, iusto tenetur iste nobis fugit mollitia id dolores deleniti molestiae porro. Officia.
-                    Animi exercitationem excepturi adipisci a facere, possimus quasi, ullam nobis quo, dolorem qui explicabo nesciunt ducimus magnam illum neque. Voluptatibus ut unde, eius numquam aspernatur obcaecati rem est illo nulla!
-                    Exercitationem qui officiis eaque itaque? Consequatur velit eum, totam mollitia odit corporis, quidem ipsum ratione maiores vel, ad sit labore temporibus voluptate officia id delectus? Consequuntur debitis quam voluptas labore.
-                    Totam, consequatur harum. Minima nesciunt dignissimos repellendus unde, tempore est facilis accusantium maxime veritatis a, possimus quam obcaecati iure officia animi sit non voluptatibus vitae incidunt tempora magnam ratione deserunt.
-                    Magni impedit laborum recusandae, laudantium molestiae hic magnam consequuntur vero doloremque dolorem expedita explicabo repellendus? Optio commodi ut consectetur similique deserunt maxime veritatis, neque ex maiores unde quae reiciendis error?
-                    Soluta, esse architecto? Ipsum nobis mollitia, quibusdam excepturi perspiciatis nisi incidunt dolorum nesciunt quis reiciendis tempore magnam cumque optio reprehenderit itaque facere et ab, odio id error totam, unde accusantium?
-                    Accusantium quia quidem, autem suscipit eveniet quisquam nam deleniti asperiores, obcaecati, culpa dignissimos beatae explicabo? Dolor iure sequi fuga, et officiis assumenda odit asperiores, quaerat cum natus libero! Nulla, quod?
-                    Quae exercitationem consequatur voluptates ducimus minima ullam perspiciatis earum dolorem sapiente reprehenderit explicabo similique sit, maxime nobis voluptatum ipsam! Ad, quam. Sapiente eos non dicta molestiae explicabo nesciunt sed repellendus.
-                    Sequi voluptate commodi, accusantium laborum cupiditate sapiente repellat itaque maxime, accusamus praesentium ullam nihil reprehenderit consectetur earum consequuntur rem labore, magnam illo impedit hic dicta cumque assumenda doloremque. Quisquam, impedit!
-                    Veritatis repellat nisi error quaerat obcaecati delectus adipisci accusamus nam odio, explicabo maxime, doloribus vitae recusandae in nihil! Eius commodi accusantium fugit aspernatur vero magni non eligendi eaque? Quasi, accusamus.</p>
-                </section>
-                <hr>
-                <section id="category3" class="anchor">
-                    <h2>Certificates</h2>
-                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Culpa nam perspiciatis, ut ea quaerat qui repudiandae, aspernatur laboriosam, iusto tenetur iste nobis fugit mollitia id dolores deleniti molestiae porro. Officia.
-                    Animi exercitationem excepturi adipisci a facere, possimus quasi, ullam nobis quo, dolorem qui explicabo nesciunt ducimus magnam illum neque. Voluptatibus ut unde, eius numquam aspernatur obcaecati rem est illo nulla!
-                    Exercitationem qui officiis eaque itaque? Consequatur velit eum, totam mollitia odit corporis, quidem ipsum ratione maiores vel, ad sit labore temporibus voluptate officia id delectus? Consequuntur debitis quam voluptas labore.
-                    Totam, consequatur harum. Minima nesciunt dignissimos repellendus unde, tempore est facilis accusantium maxime veritatis a, possimus quam obcaecati iure officia animi sit non voluptatibus vitae incidunt tempora magnam ratione deserunt.
-                    Magni impedit laborum recusandae, laudantium molestiae hic magnam consequuntur vero doloremque dolorem expedita explicabo repellendus? Optio commodi ut consectetur similique deserunt maxime veritatis, neque ex maiores unde quae reiciendis error?
-                    Soluta, esse architecto? Ipsum nobis mollitia, quibusdam excepturi perspiciatis nisi incidunt dolorum nesciunt quis reiciendis tempore magnam cumque optio reprehenderit itaque facere et ab, odio id error totam, unde accusantium?
-                    Accusantium quia quidem, autem suscipit eveniet quisquam nam deleniti asperiores, obcaecati, culpa dignissimos beatae explicabo? Dolor iure sequi fuga, et officiis assumenda odit asperiores, quaerat cum natus libero! Nulla, quod?
-                    Quae exercitationem consequatur voluptates ducimus minima ullam perspiciatis earum dolorem sapiente reprehenderit explicabo similique sit, maxime nobis voluptatum ipsam! Ad, quam. Sapiente eos non dicta molestiae explicabo nesciunt sed repellendus.
-                    Sequi voluptate commodi, accusantium laborum cupiditate sapiente repellat itaque maxime, accusamus praesentium ullam nihil reprehenderit consectetur earum consequuntur rem labore, magnam illo impedit hic dicta cumque assumenda doloremque. Quisquam, impedit!
-                    Veritatis repellat nisi error quaerat obcaecati delectus adipisci accusamus nam odio, explicabo maxime, doloribus vitae recusandae in nihil! Eius commodi accusantium fugit aspernatur vero magni non eligendi eaque? Quasi, accusamus.</p>
-                </section>
-                <hr>
-                <section id="category4" class="anchor">
-                    <h2>Hobbies & Interests</h2>
-                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Culpa nam perspiciatis, ut ea quaerat qui repudiandae, aspernatur laboriosam, iusto tenetur iste nobis fugit mollitia id dolores deleniti molestiae porro. Officia.
-                    Animi exercitationem excepturi adipisci a facere, possimus quasi, ullam nobis quo, dolorem qui explicabo nesciunt ducimus magnam illum neque. Voluptatibus ut unde, eius numquam aspernatur obcaecati rem est illo nulla!
-                    Exercitationem qui officiis eaque itaque? Consequatur velit eum, totam mollitia odit corporis, quidem ipsum ratione maiores vel, ad sit labore temporibus voluptate officia id delectus? Consequuntur debitis quam voluptas labore.
-                    Totam, consequatur harum. Minima nesciunt dignissimos repellendus unde, tempore est facilis accusantium maxime veritatis a, possimus quam obcaecati iure officia animi sit non voluptatibus vitae incidunt tempora magnam ratione deserunt.
-                    Magni impedit laborum recusandae, laudantium molestiae hic magnam consequuntur vero doloremque dolorem expedita explicabo repellendus? Optio commodi ut consectetur similique deserunt maxime veritatis, neque ex maiores unde quae reiciendis error?
-                    Soluta, esse architecto? Ipsum nobis mollitia, quibusdam excepturi perspiciatis nisi incidunt dolorum nesciunt quis reiciendis tempore magnam cumque optio reprehenderit itaque facere et ab, odio id error totam, unde accusantium?
-                    Accusantium quia quidem, autem suscipit eveniet quisquam nam deleniti asperiores, obcaecati, culpa dignissimos beatae explicabo? Dolor iure sequi fuga, et officiis assumenda odit asperiores, quaerat cum natus libero! Nulla, quod?
-                    Quae exercitationem consequatur voluptates ducimus minima ullam perspiciatis earum dolorem sapiente reprehenderit explicabo similique sit, maxime nobis voluptatum ipsam! Ad, quam. Sapiente eos non dicta molestiae explicabo nesciunt sed repellendus.
-                    Sequi voluptate commodi, accusantium laborum cupiditate sapiente repellat itaque maxime, accusamus praesentium ullam nihil reprehenderit consectetur earum consequuntur rem labore, magnam illo impedit hic dicta cumque assumenda doloremque. Quisquam, impedit!
-                    Veritatis repellat nisi error quaerat obcaecati delectus adipisci accusamus nam odio, explicabo maxime, doloribus vitae recusandae in nihil! Eius commodi accusantium fugit aspernatur vero magni non eligendi eaque? Quasi, accusamus.</p>
-                </section>
-                <hr>
-                <section id="category5" class="anchor">
-                    <h2>Blabla</h2>
-                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Culpa nam perspiciatis, ut ea quaerat qui repudiandae, aspernatur laboriosam, iusto tenetur iste nobis fugit mollitia id dolores deleniti molestiae porro. Officia.
-                    Animi exercitationem excepturi adipisci a facere, possimus quasi, ullam nobis quo, dolorem qui explicabo nesciunt ducimus magnam illum neque. Voluptatibus ut unde, eius numquam aspernatur obcaecati rem est illo nulla!
-                    Exercitationem qui officiis eaque itaque? Consequatur velit eum, totam mollitia odit corporis, quidem ipsum ratione maiores vel, ad sit labore temporibus voluptate officia id delectus? Consequuntur debitis quam voluptas labore.
-                    Totam, consequatur harum. Minima nesciunt dignissimos repellendus unde, tempore est facilis accusantium maxime veritatis a, possimus quam obcaecati iure officia animi sit non voluptatibus vitae incidunt tempora magnam ratione deserunt.
-                    Magni impedit laborum recusandae, laudantium molestiae hic magnam consequuntur vero doloremque dolorem expedita explicabo repellendus? Optio commodi ut consectetur similique deserunt maxime veritatis, neque ex maiores unde quae reiciendis error?
-                    Soluta, esse architecto? Ipsum nobis mollitia, quibusdam excepturi perspiciatis nisi incidunt dolorum nesciunt quis reiciendis tempore magnam cumque optio reprehenderit itaque facere et ab, odio id error totam, unde accusantium?
-                    Accusantium quia quidem, autem suscipit eveniet quisquam nam deleniti asperiores, obcaecati, culpa dignissimos beatae explicabo? Dolor iure sequi fuga, et officiis assumenda odit asperiores, quaerat cum natus libero! Nulla, quod?
-                    Quae exercitationem consequatur voluptates ducimus minima ullam perspiciatis earum dolorem sapiente reprehenderit explicabo similique sit, maxime nobis voluptatum ipsam! Ad, quam. Sapiente eos non dicta molestiae explicabo nesciunt sed repellendus.
-                    Sequi voluptate commodi, accusantium laborum cupiditate sapiente repellat itaque maxime, accusamus praesentium ullam nihil reprehenderit consectetur earum consequuntur rem labore, magnam illo impedit hic dicta cumque assumenda doloremque. Quisquam, impedit!
-                    Veritatis repellat nisi error quaerat obcaecati delectus adipisci accusamus nam odio, explicabo maxime, doloribus vitae recusandae in nihil! Eius commodi accusantium fugit aspernatur vero magni non eligendi eaque? Quasi, accusamus.</p>
-                </section>
+        </div>
+
+        <div id="side">
+            <div id="sideContent">
+                <h1 id="sideBigName">Aaaaaa Ssssss</h1>
+                <!-- <img src="" alt=""> -->
             </div>
         </div>
 
-    </body>
+        <div id="content">
+            <section id="category1" class="anchor">
+                <h3>About me</h3>
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Culpa nam perspiciatis, ut ea quaerat qui repudiandae, aspernatur laboriosam, iusto tenetur iste nobis fugit mollitia id dolores deleniti molestiae porro. Officia.
+                Animi exercitationem excepturi adipisci a facere, possimus quasi, ullam nobis quo, dolorem qui explicabo nesciunt ducimus magnam illum neque. Voluptatibus ut unde, eius numquam aspernatur obcaecati rem est illo nulla!
+                Exercitationem qui officiis eaque itaque? Consequatur velit eum, totam mollitia odit corporis, quidem ipsum ratione maiores vel, ad sit labore temporibus voluptate officia id delectus? Consequuntur debitis quam voluptas labore.
+                Totam, consequatur harum. Minima nesciunt dignissimos repellendus unde, tempore est facilis accusantium maxime veritatis a, possimus quam obcaecati iure officia animi sit non voluptatibus vitae incidunt tempora magnam ratione deserunt.
+                Magni impedit laborum recusandae, laudantium molestiae hic magnam consequuntur vero doloremque dolorem expedita explicabo repellendus? Optio commodi ut consectetur similique deserunt maxime veritatis, neque ex maiores unde quae reiciendis error?
+                Soluta, esse architecto? Ipsum nobis mollitia, quibusdam excepturi perspiciatis nisi incidunt dolorum nesciunt quis reiciendis tempore magnam cumque optio reprehenderit itaque facere et ab, odio id error totam, unde accusantium?
+                Accusantium quia quidem, autem suscipit eveniet quisquam nam deleniti asperiores, obcaecati, culpa dignissimos beatae explicabo? Dolor iure sequi fuga, et officiis assumenda odit asperiores, quaerat cum natus libero! Nulla, quod?
+                Quae exercitationem consequatur voluptates ducimus minima ullam perspiciatis earum dolorem sapiente reprehenderit explicabo similique sit, maxime nobis voluptatum ipsam! Ad, quam. Sapiente eos non dicta molestiae explicabo nesciunt sed repellendus.
+                Sequi voluptate commodi, accusantium laborum cupiditate sapiente repellat itaque maxime, accusamus praesentium ullam nihil reprehenderit consectetur earum consequuntur rem labore, magnam illo impedit hic dicta cumque assumenda doloremque. Quisquam, impedit!
+                Veritatis repellat nisi error quaerat obcaecati delectus adipisci accusamus nam odio, explicabo maxime, doloribus vitae recusandae in nihil! Eius commodi accusantium fugit aspernatur vero magni non eligendi eaque? Quasi, accusamus.</p>
+            </section>
+            <hr>
+            <section id="category2" class="anchor">
+                <h3>Education</h3>
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Culpa nam perspiciatis, ut ea quaerat qui repudiandae, aspernatur laboriosam, iusto tenetur iste nobis fugit mollitia id dolores deleniti molestiae porro. Officia.
+                Animi exercitationem excepturi adipisci a facere, possimus quasi, ullam nobis quo, dolorem qui explicabo nesciunt ducimus magnam illum neque. Voluptatibus ut unde, eius numquam aspernatur obcaecati rem est illo nulla!
+                Exercitationem qui officiis eaque itaque? Consequatur velit eum, totam mollitia odit corporis, quidem ipsum ratione maiores vel, ad sit labore temporibus voluptate officia id delectus? Consequuntur debitis quam voluptas labore.
+                Totam, consequatur harum. Minima nesciunt dignissimos repellendus unde, tempore est facilis accusantium maxime veritatis a, possimus quam obcaecati iure officia animi sit non voluptatibus vitae incidunt tempora magnam ratione deserunt.
+                Magni impedit laborum recusandae, laudantium molestiae hic magnam consequuntur vero doloremque dolorem expedita explicabo repellendus? Optio commodi ut consectetur similique deserunt maxime veritatis, neque ex maiores unde quae reiciendis error?
+                Soluta, esse architecto? Ipsum nobis mollitia, quibusdam excepturi perspiciatis nisi incidunt dolorum nesciunt quis reiciendis tempore magnam cumque optio reprehenderit itaque facere et ab, odio id error totam, unde accusantium?
+                Accusantium quia quidem, autem suscipit eveniet quisquam nam deleniti asperiores, obcaecati, culpa dignissimos beatae explicabo? Dolor iure sequi fuga, et officiis assumenda odit asperiores, quaerat cum natus libero! Nulla, quod?
+                Quae exercitationem consequatur voluptates ducimus minima ullam perspiciatis earum dolorem sapiente reprehenderit explicabo similique sit, maxime nobis voluptatum ipsam! Ad, quam. Sapiente eos non dicta molestiae explicabo nesciunt sed repellendus.
+                Sequi voluptate commodi, accusantium laborum cupiditate sapiente repellat itaque maxime, accusamus praesentium ullam nihil reprehenderit consectetur earum consequuntur rem labore, magnam illo impedit hic dicta cumque assumenda doloremque. Quisquam, impedit!
+                Veritatis repellat nisi error quaerat obcaecati delectus adipisci accusamus nam odio, explicabo maxime, doloribus vitae recusandae in nihil! Eius commodi accusantium fugit aspernatur vero magni non eligendi eaque? Quasi, accusamus.</p>
+            </section>
+            <hr>
+            <section id="category3" class="anchor">
+                <h3>Certificates</h3>
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Culpa nam perspiciatis, ut ea quaerat qui repudiandae, aspernatur laboriosam, iusto tenetur iste nobis fugit mollitia id dolores deleniti molestiae porro. Officia.
+                Animi exercitationem excepturi adipisci a facere, possimus quasi, ullam nobis quo, dolorem qui explicabo nesciunt ducimus magnam illum neque. Voluptatibus ut unde, eius numquam aspernatur obcaecati rem est illo nulla!
+                Exercitationem qui officiis eaque itaque? Consequatur velit eum, totam mollitia odit corporis, quidem ipsum ratione maiores vel, ad sit labore temporibus voluptate officia id delectus? Consequuntur debitis quam voluptas labore.
+                Totam, consequatur harum. Minima nesciunt dignissimos repellendus unde, tempore est facilis accusantium maxime veritatis a, possimus quam obcaecati iure officia animi sit non voluptatibus vitae incidunt tempora magnam ratione deserunt.
+                Magni impedit laborum recusandae, laudantium molestiae hic magnam consequuntur vero doloremque dolorem expedita explicabo repellendus? Optio commodi ut consectetur similique deserunt maxime veritatis, neque ex maiores unde quae reiciendis error?
+                Soluta, esse architecto? Ipsum nobis mollitia, quibusdam excepturi perspiciatis nisi incidunt dolorum nesciunt quis reiciendis tempore magnam cumque optio reprehenderit itaque facere et ab, odio id error totam, unde accusantium?
+                Accusantium quia quidem, autem suscipit eveniet quisquam nam deleniti asperiores, obcaecati, culpa dignissimos beatae explicabo? Dolor iure sequi fuga, et officiis assumenda odit asperiores, quaerat cum natus libero! Nulla, quod?
+                Quae exercitationem consequatur voluptates ducimus minima ullam perspiciatis earum dolorem sapiente reprehenderit explicabo similique sit, maxime nobis voluptatum ipsam! Ad, quam. Sapiente eos non dicta molestiae explicabo nesciunt sed repellendus.
+                Sequi voluptate commodi, accusantium laborum cupiditate sapiente repellat itaque maxime, accusamus praesentium ullam nihil reprehenderit consectetur earum consequuntur rem labore, magnam illo impedit hic dicta cumque assumenda doloremque. Quisquam, impedit!
+                Veritatis repellat nisi error quaerat obcaecati delectus adipisci accusamus nam odio, explicabo maxime, doloribus vitae recusandae in nihil! Eius commodi accusantium fugit aspernatur vero magni non eligendi eaque? Quasi, accusamus.</p>
+            </section>
+            <hr>
+            <section id="category4" class="anchor">
+                <h3>Hobbies & Interests</h3>
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Culpa nam perspiciatis, ut ea quaerat qui repudiandae, aspernatur laboriosam, iusto tenetur iste nobis fugit mollitia id dolores deleniti molestiae porro. Officia.
+                Animi exercitationem excepturi adipisci a facere, possimus quasi, ullam nobis quo, dolorem qui explicabo nesciunt ducimus magnam illum neque. Voluptatibus ut unde, eius numquam aspernatur obcaecati rem est illo nulla!
+                Exercitationem qui officiis eaque itaque? Consequatur velit eum, totam mollitia odit corporis, quidem ipsum ratione maiores vel, ad sit labore temporibus voluptate officia id delectus? Consequuntur debitis quam voluptas labore.
+                Totam, consequatur harum. Minima nesciunt dignissimos repellendus unde, tempore est facilis accusantium maxime veritatis a, possimus quam obcaecati iure officia animi sit non voluptatibus vitae incidunt tempora magnam ratione deserunt.
+                Magni impedit laborum recusandae, laudantium molestiae hic magnam consequuntur vero doloremque dolorem expedita explicabo repellendus? Optio commodi ut consectetur similique deserunt maxime veritatis, neque ex maiores unde quae reiciendis error?
+                Soluta, esse architecto? Ipsum nobis mollitia, quibusdam excepturi perspiciatis nisi incidunt dolorum nesciunt quis reiciendis tempore magnam cumque optio reprehenderit itaque facere et ab, odio id error totam, unde accusantium?
+                Accusantium quia quidem, autem suscipit eveniet quisquam nam deleniti asperiores, obcaecati, culpa dignissimos beatae explicabo? Dolor iure sequi fuga, et officiis assumenda odit asperiores, quaerat cum natus libero! Nulla, quod?
+                Quae exercitationem consequatur voluptates ducimus minima ullam perspiciatis earum dolorem sapiente reprehenderit explicabo similique sit, maxime nobis voluptatum ipsam! Ad, quam. Sapiente eos non dicta molestiae explicabo nesciunt sed repellendus.
+                Sequi voluptate commodi, accusantium laborum cupiditate sapiente repellat itaque maxime, accusamus praesentium ullam nihil reprehenderit consectetur earum consequuntur rem labore, magnam illo impedit hic dicta cumque assumenda doloremque. Quisquam, impedit!
+                Veritatis repellat nisi error quaerat obcaecati delectus adipisci accusamus nam odio, explicabo maxime, doloribus vitae recusandae in nihil! Eius commodi accusantium fugit aspernatur vero magni non eligendi eaque? Quasi, accusamus.</p>
+            </section>
+            <hr>
+            <section id="category5" class="anchor">
+                <h3>Blabla</h3>
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Culpa nam perspiciatis, ut ea quaerat qui repudiandae, aspernatur laboriosam, iusto tenetur iste nobis fugit mollitia id dolores deleniti molestiae porro. Officia.
+                Animi exercitationem excepturi adipisci a facere, possimus quasi, ullam nobis quo, dolorem qui explicabo nesciunt ducimus magnam illum neque. Voluptatibus ut unde, eius numquam aspernatur obcaecati rem est illo nulla!
+                Exercitationem qui officiis eaque itaque? Consequatur velit eum, totam mollitia odit corporis, quidem ipsum ratione maiores vel, ad sit labore temporibus voluptate officia id delectus? Consequuntur debitis quam voluptas labore.
+                Totam, consequatur harum. Minima nesciunt dignissimos repellendus unde, tempore est facilis accusantium maxime veritatis a, possimus quam obcaecati iure officia animi sit non voluptatibus vitae incidunt tempora magnam ratione deserunt.
+                Magni impedit laborum recusandae, laudantium molestiae hic magnam consequuntur vero doloremque dolorem expedita explicabo repellendus? Optio commodi ut consectetur similique deserunt maxime veritatis, neque ex maiores unde quae reiciendis error?
+                Soluta, esse architecto? Ipsum nobis mollitia, quibusdam excepturi perspiciatis nisi incidunt dolorum nesciunt quis reiciendis tempore magnam cumque optio reprehenderit itaque facere et ab, odio id error totam, unde accusantium?
+                Accusantium quia quidem, autem suscipit eveniet quisquam nam deleniti asperiores, obcaecati, culpa dignissimos beatae explicabo? Dolor iure sequi fuga, et officiis assumenda odit asperiores, quaerat cum natus libero! Nulla, quod?
+                Quae exercitationem consequatur voluptates ducimus minima ullam perspiciatis earum dolorem sapiente reprehenderit explicabo similique sit, maxime nobis voluptatum ipsam! Ad, quam. Sapiente eos non dicta molestiae explicabo nesciunt sed repellendus.
+                Sequi voluptate commodi, accusantium laborum cupiditate sapiente repellat itaque maxime, accusamus praesentium ullam nihil reprehenderit consectetur earum consequuntur rem labore, magnam illo impedit hic dicta cumque assumenda doloremque. Quisquam, impedit!
+                Veritatis repellat nisi error quaerat obcaecati delectus adipisci accusamus nam odio, explicabo maxime, doloribus vitae recusandae in nihil! Eius commodi accusantium fugit aspernatur vero magni non eligendi eaque? Quasi, accusamus.</p>
+            </section>      
+        </div>
+
+        <footer>
+            <p>
+                Eius quos nemo accusamus sed in, voluptate, inventore libero molestiae soluta temporibus commodi sequi! Dolore eaque provident delectus officiis cum inventore at dignissimos, error dolorum? Ad quidem inventore distinctio quia!
+                Deserunt error harum quod, odio vero est corporis numquam ullam culpa beatae optio reprehenderit temporibus, velit tenetur aut maxime voluptatibus recusandae quasi cumque eum odit eligendi, eveniet molestiae? Possimus, sapiente.
+                Placeat aperiam harum amet necessitatibus. Sequi, quam mollitia! Expedita quasi porro ab natus reiciendis blanditiis vero, inventore saepe eos assumenda. Vero minima alias, voluptates doloremque odio labore. Perferendis, laudantium excepturi.
+                Itaque quaerat culpa aliquam commodi. Id dolores numquam deserunt, fuga dicta nisi quos, nostrum iusto esse consequuntur aspernatur rerum dolor ratione! Porro exercitationem, dolore ad est reprehenderit quas temporibus tempora?
+                Corrupti, nemo eveniet aut ipsa, amet mollitia minima assumenda eligendi suscipit aspernatur quod dicta accusantium iure neque hic laborum ratione earum omnis ad itaque adipisci animi veniam fuga sint. Fugit!
+                Et ex iste eum, laudantium odit praesentium explicabo iusto perspiciatis ut, alias ad dicta unde ratione quos earum facere! Officiis minima commodi, tempore dolores ullam accusamus voluptates eius accusantium tenetur!
+                Vitae culpa incidunt reiciendis provident laboriosam consequuntur perspiciatis voluptatum id tempore. Delectus recusandae facere rerum voluptatem magni dolorem voluptatum corporis hic nisi! Molestias rem, natus facere recusandae ipsum nobis iste!
+                Repudiandae, excepturi, consectetur unde impedit nobis, numquam accusantium harum quas deleniti voluptatum obcaecati? Sit quas quae similique distinctio hic laudantium quibusdam obcaecati voluptatem ipsam, facilis possimus suscipit voluptates ut animi!
+                © 2023 G3-DT
+            </p>
+        </footer>
+    </div>
+</body>
 </html>
